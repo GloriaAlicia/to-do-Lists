@@ -5,23 +5,26 @@ import { AllLists } from '../../App';
 import {createList, createTask } from '../../helpers /create';
 
 
-export const Form = ({ submit, placeholder, id, labelText, textValue}) => {
+export const Form = ({ submit, placeholder, id, labelText, buttonText, textValue}) => {
 
-    const [state, setStateData] = useState([]);
+    const initialState = textValue || ''
+    const [state, setState] = useState(initialState);
+
     const [lists, setLists, actualList, setActualList, task, setTask] = useContext(AllLists);
 
-    const handleInputChange = ({ target }) => setStateData(target.value);
-
+    const handleInputChange = ({ target }) => {
+        setState(target.value);
+    }
     const handleSubmit = e => {
 
         e.preventDefault()
         submit(state, actualList)
-        setStateData('');
+        setState('');
 
     }
 
     return (
-        <form action="#" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
 
             <div className="flex">
 
@@ -33,10 +36,20 @@ export const Form = ({ submit, placeholder, id, labelText, textValue}) => {
                     className="inputData"
                     placeholder={placeholder}
                     autoComplete="off"
-                    value={ textValue ?? state }
-                    id={id}
+                    value={ state }
+                    id={ id }
                     onChange={handleInputChange}
                 />
+
+                {
+                    buttonText ?
+
+                        <button onClick={ handleSubmit }>
+                            { buttonText }
+                        </button>
+
+                    : undefined
+                }
             </div>
         </form>
     )

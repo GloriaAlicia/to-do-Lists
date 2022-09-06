@@ -16,32 +16,30 @@ const TaskEdit = ({ searchId, setEdit }) => {
         setEdit(false)
     } */
 
+/*     useEffect(() => {
+        set
+    }, []); */
+
     const handleSubmit = ( state, actualList, idSearch = searchId) => {
         
         const listsEdit = editTask(state, actualList, idSearch)
         setLists([...lists])
+        setEdit(false)
         console.log(lists)
 
     }
 
 
     return (
-        <div className="flex">
-
+        <div className='flex'>
             <Form
                 submit={ handleSubmit }
                 placeholder={'edit your task'}
                 id={'editing'}
                 labelText={''}
+                buttonText={'update'}
                 textValue={task.task}
             />
-
-            <button onClick={ () => setEdit(false) }  >
-
-                update
-
-            </button>
-
         </div>
     );
 

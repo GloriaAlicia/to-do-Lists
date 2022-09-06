@@ -1,14 +1,14 @@
 import React from 'react';
 import { useEffect, useState, useContext } from "react";
 
-import { completeTask, editTask, deleteTask } from '../../helpers /create';
+import { completeTask, deleteTask } from '../../helpers /create';
 import { AllLists } from '../../App';
 
 import "./styles.css"
 import TaskEdit from './TaskEdit';
 
 
-const Task = ({ name, complete, key, id, searchId, actualTask }) => {
+const Task = ({ name, complete, id, searchId, actualTask }) => {
 
     const [lists, setLists, actualList, setActualList, task, setTask] = useContext(AllLists);
 
@@ -37,7 +37,7 @@ const Task = ({ name, complete, key, id, searchId, actualTask }) => {
             />
             
         ) : (
-            <div key={key} onClick={() => setTask(actualTask)} >
+            <div onClick={() => setTask(actualTask)}>
                 <input
                     type="checkbox"
                     id={id}
