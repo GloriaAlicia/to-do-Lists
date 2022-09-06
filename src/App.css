@@ -1,0 +1,32 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+
+  --border-radius: 7px;
+}
+
+.flex{
+  display: flex;
+}
+
+.container{
+  width: 100vw;
+  min-height: 70vh;
+}
+
+/**************** input *****************/
+
+.inputData{
+  outline: 2px solid rgba(49, 195, 231, 0.616);
+  border: transparent;
+  border-radius: var(--border-radius);
+
+  padding: 0.5rem;
+
+  background: transparent;
+  color: inherit;
+  /* border-bottom: 1px solid currentColor; */
+  padding: 0.25em;
+  transition: border-bottom 150ms ease-in;
+  /* order: 2; */
+}
