@@ -1,56 +1,49 @@
 import { useState, useContext } from 'react'
 import '../../App.css'
+import { AllLists } from '../../context'
 
-import { AllLists } from '../../App';
-import {createList, createTask } from '../../helpers /create';
+export const Form = ({
+	submit,
+	placeholder,
+	id,
+	labelText,
+	buttonText,
+	textValue,
+}) => {
+	const initialState = textValue || ''
+	const [state, setState] = useState(initialState)
 
+	const { lists, setLists, actualList } = useContext(AllLists)
 
-export const Form = ({ submit, placeholder, id, labelText, buttonText, textValue}) => {
+	const handleInputChange = ({ target }) => {
+		setState(target.value)
+	}
+	const handleSubmit = (e) => {
+		e.preventDefault()
+		submit(state, actualList, lists)
+		setState('')
+	}
 
-    const initialState = textValue || ''
-    const [state, setState] = useState(initialState);
+	return (
+		<form onSubmit={handleSubmit}>
+			<div className='flex'>
+				<label htmlFor={id}> {labelText} </label>
 
-    const [lists, setLists, actualList, setActualList, task, setTask] = useContext(AllLists);
+				<input
+					type='text'
+					name='task'
+					className='inputData'
+					placeholder={placeholder}
+					autoComplete='off'
+					value={state}
+					id={id}
+					onChange={handleInputChange}
+				/>
 
-    const handleInputChange = ({ target }) => {
-        setState(target.value);
-    }
-    const handleSubmit = e => {
-
-        e.preventDefault()
-        submit(state, actualList)
-        setState('');
-
-    }
-
-    return (
-        <form onSubmit={handleSubmit}>
-
-            <div className="flex">
-
-                <label htmlFor={id} > { labelText } </label>
-
-                <input
-                    type="text"
-                    name="task"
-                    className="inputData"
-                    placeholder={placeholder}
-                    autoComplete="off"
-                    value={ state }
-                    id={ id }
-                    onChange={handleInputChange}
-                />
-
-                {
-                    buttonText ?
-
-                        <button onClick={ handleSubmit }>
-                            { buttonText }
-                        </button>
-
-                    : undefined
-                }
-            </div>
-        </form>
-    )
+				{buttonText ? (
+					<button onClick={handleSubmit}>{buttonText}</button>
+				) : undefined}
+			</div>
+		</form>
+	)
 }

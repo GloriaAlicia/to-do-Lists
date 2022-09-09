@@ -1,76 +1,52 @@
-import React from 'react';
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext } from 'react'
 
-import { completeTask, deleteTask } from '../../helpers /create';
-import { AllLists } from '../../App';
+import { completeTask, deleteTask } from '../../helpers /create'
+import { AllLists } from '../../context'
 
-import "./styles.css"
-import TaskEdit from './TaskEdit';
+import './styles.css'
+import { TaskEdit } from './TaskEdit'
 
+export const Task = ({ name, complete, id, searchId, actualTask }) => {
+	const { lists, setLists, actualList, setActualList, task, setTask } =
+		useContext(AllLists)
 
-const Task = ({ name, complete, id, searchId, actualTask }) => {
+	const [edit, setEdit] = useState(false)
 
-    const [lists, setLists, actualList, setActualList, task, setTask] = useContext(AllLists);
+	const handleChange = (e) => {
+		let change = e.target.checked ? 'completed' : 'progress'
+		const listsEdit = completeTask(actualList, change, id)
+		setLists([...lists])
+	}
 
+	const handleDelete = () => {
+		setLists(deleteTask(lists, actualList, id))
+	}
 
-    const [edit, setEdit] = useState(false)
+	return edit ? (
+		<TaskEdit searchId={searchId} setEdit={setEdit} />
+	) : (
+		<div onClick={() => setTask(actualTask)}>
+			<input
+				type='checkbox'
+				id={id}
+				className='hide'
+				defaultChecked={complete === 'completed' ?? checked}
+				onChange={handleChange}
+			/>
 
-    const handleChange = e => {
-        const listsEdit = completeTask(actualList, e.target.checked, id)
-        setLists([...lists])
-        console.log(lists)
-    }
+			<label htmlFor={id}>
+				<span
+					className={`custom-checkbox ${
+						complete === 'completed' && 'completed'
+					}`}
+				></span>
 
-    const handleDelete = () => {
+				{name}
+			</label>
 
-        const removeItem = deleteTask( lists, actualList, task?.id)
-        console.log(removeItem);
-        setLists(removeItem)
+			<button onClick={() => setEdit(true)}>edit</button>
 
-    }
-
-    return edit ? (
-
-            <TaskEdit
-                searchId={searchId}
-                setEdit={setEdit}
-            />
-            
-        ) : (
-            <div onClick={() => setTask(actualTask)}>
-                <input
-                    type="checkbox"
-                    id={id}
-                    className='hide'
-                    defaultChecked={ complete ?? checked }
-                    onChange={handleChange}
-                />
-    
-    
-                <label htmlFor={ id } >
-                    <span
-                        className={`custom-checkbox ${complete && 'completed'}`}>
-                    </span>
-    
-                    {name}
-    
-                </label>
-    
-                <button onClick={ () => setEdit(true) }  > 
-    
-                    edit
-    
-                </button>
-    
-                <button onClick={ handleDelete } > 
-    
-                    delete
-    
-                </button>
-            </div>
-        );
-    
-
+			<button onClick={handleDelete}>delete</button>
+		</div>
+	)
 }
-
-export default Task;

@@ -1,27 +1,21 @@
-import { useState, createContext } from 'react'
+import { useState, useContext } from 'react'
 
 import './App.css'
-import { SideBar } from './components/SideBar'
+import { Home } from './components/Home'
 import { TodoList } from './components/TodoList'
 
-export const AllLists = createContext();
+import { Provider } from './context/index.jsx'
 
 function App() {
-  const [lists, setLists] = useState([]);
-  const [actualList, setActualList] = useState(0);
-  const [task, setTask] = useState({});
-
-  return (
-    <AllLists.Provider value={[lists, setLists, actualList, setActualList, task, setTask]}>
-
-      <h1>Stuffs for do</h1>
-      <main className='flex container'>
-        <SideBar />
-        <TodoList />
-      </main>
-
-    </AllLists.Provider>
-  )
+	return (
+		<Provider>
+			<h1>Stuffs for do</h1>
+			<main className='flex container'>
+				<Home />
+				<TodoList />
+			</main>
+		</Provider>
+	)
 }
 
 export default App
