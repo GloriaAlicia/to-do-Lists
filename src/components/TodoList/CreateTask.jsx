@@ -1,23 +1,23 @@
-import { useEffect, useContext } from 'react'
+import { useContext } from 'react'
 
-import { Form } from '../share/Form'
-import { createTask } from '../../helpers /create'
+import { Form } from '../Share/Form'
+import { createTask } from '../../helpers/create'
 import { AllLists } from '../../context'
 
 export const CreateTask = () => {
-	const { lists, setLists, actualList, setActualList, setTask, task } =
-		useContext(AllLists)
+	const { lists, dispatch } = useContext(AllLists)
 
-	const handleSubmit = (state, actualList, lists) => {
-		const newListsUpdate = createTask(state, actualList.id, lists)
-		setLists([...newListsUpdate])
+	const handleSubmit = (state) => {
+		dispatch({
+			type: 'addSubtask',
+			payload: createTask(state),
+		})
 	}
 
 	return (
 		<Form
 			submit={handleSubmit}
 			placeholder={'create new task'}
-			id={'task'}
 			labelText={'task'}
 		/>
 	)

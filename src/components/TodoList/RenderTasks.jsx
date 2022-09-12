@@ -1,6 +1,6 @@
 import { Task } from './Task'
 
-export const StatusTasks = ({ tasks, title }) => {
+export const RenderTasks = ({ tasks, title }) => {
 	return (
 		<article>
 			{tasks?.length > 0 ? <p> {title} </p> : undefined}
@@ -8,11 +8,9 @@ export const StatusTasks = ({ tasks, title }) => {
 			{tasks?.map((list) => (
 				<div key={list.id}>
 					<Task
-						name={list.task}
+						task={list.task}
 						complete={list.complete}
 						id={list.id}
-						searchId={list.id}
-						actualTask={list}
 					/>
 				</div>
 			))}

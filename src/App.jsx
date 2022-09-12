@@ -1,10 +1,8 @@
-import { useState, useContext } from 'react'
+import { Home } from './pages/Home/index'
+import { Board } from './pages/board'
+import { Provider } from './context/index.jsx'
 
 import './App.css'
-import { Home } from './components/Home'
-import { TodoList } from './components/TodoList'
-
-import { Provider } from './context/index.jsx'
 
 function App() {
 	return (
@@ -12,7 +10,7 @@ function App() {
 			<h1>Stuffs for do</h1>
 			<main className='flex container'>
 				<Home />
-				<TodoList />
+				<Board />
 			</main>
 		</Provider>
 	)

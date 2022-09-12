@@ -1,19 +1,20 @@
-import { createContext, useState } from 'react'
+import { createContext, useReducer, useState } from 'react'
+import { reducer } from '../reducer/reducer'
 
 export const AllLists = createContext(null)
 
+const init = () => {
+	return JSON.parse(localStorage.getItem('Notes')) || []
+}
+
 export function Provider({ children }) {
-	const [lists, setLists] = useState([])
-	const [actualList, setActualList] = useState([])
-	const [task, setTask] = useState({})
+	// const [task, setTask] = useState({})
+
+	const [lists, dispatch] = useReducer(reducer, [], init)
 
 	const values = {
 		lists,
-		setLists,
-		actualList,
-		setActualList,
-		task,
-		setTask,
+		dispatch,
 	}
 
 	return <AllLists.Provider value={values}>{children}</AllLists.Provider>

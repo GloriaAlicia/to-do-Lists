@@ -4,9 +4,7 @@
 
 ## _pendientes_
 
-refactorizacion
-validación de entrada
-guardar localStorage
+key de id  
 modo oscuro
 
 <!-- ## **bugs** -->

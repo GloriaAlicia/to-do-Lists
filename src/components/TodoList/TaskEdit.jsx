@@ -1,19 +1,20 @@
-import React, { useEffect, useState, useContext } from 'react'
+import { useContext } from 'react'
 import PropTypes from 'prop-types'
 
-import { editTask } from '../../helpers /create'
+import { updateTask } from '../../helpers/create'
 import { AllLists } from '../../context'
 
 import './styles.css'
-import { Form } from '../share/Form'
+import { Form } from '../Share/Form'
 
-export const TaskEdit = ({ searchId, setEdit }) => {
-	const { lists, setLists, actualList, setActualList, task, setTask } =
-		useContext(AllLists)
+export const TaskEdit = ({ searchId, setEdit, task }) => {
+	const { lists, dispatch } = useContext(AllLists)
 
-	const handleSubmit = (state, actualList, Lists, idSearch = searchId) => {
-		const listsEdit = editTask(state, actualList, idSearch)
-		setLists([...lists])
+	const handleSubmit = (state) => {
+		dispatch({
+			type: 'updateSubtask',
+			payload: updateTask(state, searchId),
+		})
 		setEdit(false)
 	}
 
@@ -22,10 +23,9 @@ export const TaskEdit = ({ searchId, setEdit }) => {
 			<Form
 				submit={handleSubmit}
 				placeholder={'edit your task'}
-				id={'editing'}
 				labelText={''}
-				buttonText={'update'}
-				textValue={task.task}
+				textValue={task}
+				buttonText={'Update'}
 			/>
 		</div>
 	)
