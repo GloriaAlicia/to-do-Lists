@@ -1,4 +1,4 @@
-./.prettierrc
+./prettierrc
 # Logs
 logs
 *.log

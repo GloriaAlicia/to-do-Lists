@@ -4,7 +4,6 @@
 
 ## _pendientes_
 
-key de id  
-modo oscuro
+modo oscuro  
 
 <!-- ## **bugs** -->

@@ -1,40 +1,42 @@
-.containerList{
-    width: 90%;
+.containerList {
+	width: 90%;
 }
-.containerTasks{
-    background-color: rgb(240, 236, 231);
-    padding: 0rem 1rem;
+.containerTasks {
+	background-color: rgb(240, 236, 231);
+	padding: 0rem 1rem;
 }
 
-.header{
-    width: 90%;
-    display: flex;
-    justify-content: space-around;
+.header {
+	width: 90%;
+	display: flex;
+	justify-content: space-around;
 }
 
 /*************Component task***************/
-.hide{
-    display: none;
+.hide {
+	display: none;
 }
 .custom-checkbox {
-    --size: 0.75em;
-    display: inline-block;
-    width: var(--size);
-    height: var(--size);
-    margin-right: var(--size);
-    cursor: pointer;
-    border: 2px solid #00f;
-    border-radius: 50%;
-    transform: scale(1);
-    transition: transform 300ms ease-in-out;
+	--size: 0.75em;
+	display: inline-block;
+	width: var(--size);
+	height: var(--size);
+	margin-right: var(--size);
+	cursor: pointer;
+	border: 2px solid #00f;
+	border-radius: 50%;
+	transform: scale(1);
+	transition: transform 300ms ease-in-out;
 }
 
 .completed {
-    background: rgba(129, 129, 255, 0.507);
-    border-color: rgb(127, 127, 255);
-    box-shadow: inset 0 0 0px 2px white;
+	background: rgba(129, 129, 255, 0.507);
+	border-color: rgb(127, 127, 255);
+	box-shadow: inset 0 0 0px 2px white;
+	text-decoration: line-through;
+	color: grey;
 }
-  
-[type="checkbox"]:checked + label {
-    opacity: 0.5;
+
+[type='checkbox']:checked + label {
+	opacity: 0.8;
 }

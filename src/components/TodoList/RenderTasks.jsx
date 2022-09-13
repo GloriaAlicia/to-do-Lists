@@ -1,4 +1,5 @@
 import { Task } from './Task'
+import { v4 as uuidv4 } from 'uuid'
 
 export const RenderTasks = ({ tasks, title }) => {
 	return (
@@ -6,7 +7,7 @@ export const RenderTasks = ({ tasks, title }) => {
 			{tasks?.length > 0 ? <p> {title} </p> : undefined}
 
 			{tasks?.map((list) => (
-				<div key={list.id}>
+				<div key={uuidv4()}>
 					<Task
 						task={list.task}
 						complete={list.complete}

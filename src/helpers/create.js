@@ -1,7 +1,9 @@
+import { v4 as uuidv4 } from 'uuid'
+
 export const createList = (state) => {
 	return {
 		name: state,
-		id: Date.now(),
+		id: uuidv4(),
 		selected: false,
 		tasks: [],
 	}
@@ -12,7 +14,7 @@ export const createTask = (state) => {
 		task: state,
 		update: false,
 		complete: 'progress',
-		id: Date.now(),
+		id: uuidv4(),
 	}
 }
 
