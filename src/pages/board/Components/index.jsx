@@ -1,8 +1,8 @@
 import './styles.css'
 import { RenderTasks } from './RenderTasks'
 import { CreateTask } from './CreateTask'
-import { useFindList } from '../../hooks/useFindList'
-import { useTaskState } from '../../hooks/useTaskState'
+import { useFindList } from '../../../hooks/useFindList'
+import { useTaskState } from '../../../hooks/useTaskState'
 
 export const TodoList = () => {
 	const actualList = useFindList()

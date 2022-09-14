@@ -6,12 +6,12 @@ export const RenderTasks = ({ tasks, title }) => {
 		<article>
 			{tasks?.length > 0 ? <p> {title} </p> : undefined}
 
-			{tasks?.map((list) => (
-				<div key={uuidv4()}>
+			{tasks?.map((task) => (
+				<div key={task.id}>
 					<Task
-						task={list.task}
-						complete={list.complete}
-						id={list.id}
+						task={task.task}
+						complete={task.complete}
+						id={task.id}
 					/>
 				</div>
 			))}

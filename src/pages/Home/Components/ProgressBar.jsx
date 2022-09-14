@@ -1,7 +1,8 @@
 import './stylesProgressBar.css'
 
 export const ProgressBar = () => {
-	//increase progress
+	//increaseProgress
+
 	return (
 		<section className='container'>
 			<div className='progress'></div>

@@ -1,16 +1,9 @@
 import { useContext } from 'react'
-import { AllLists } from '../../context/index.jsx'
-import { v4 as uuidv4 } from 'uuid'
+import { AllLists } from '../../../context/index.jsx'
+import { pickList } from '../../../helpers/create.js'
 
 export const Lists = () => {
 	const { lists, dispatch } = useContext(AllLists)
-
-	const selectedList = (id) => {
-		dispatch({
-			type: 'selectedList',
-			payload: id,
-		})
-	}
 
 	return (
 		<section>
@@ -18,7 +11,7 @@ export const Lists = () => {
 
 			<ol>
 				{lists.map((list) => (
-					<li key={uuidv4()} onClick={() => selectedList(list.id)}>
+					<li key={list.id} onClick={() => dispatch(pickList(list.id))}>
 						{list.name}
 					</li>
 				))}

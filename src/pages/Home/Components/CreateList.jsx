@@ -1,17 +1,12 @@
 import { useContext } from 'react'
-import { Form } from '../Share/Form'
-import { AllLists } from '../../context/index.jsx'
-import { createList, createTask } from '../../helpers/create.js'
+import { Form } from '../../../components/Form'
+import { AllLists } from '../../../context/index.jsx'
+import { createList } from '../../../helpers/create.js'
 
 export const CreateList = () => {
 	const { lists, dispatch } = useContext(AllLists)
 
-	const handleSubmit = (state) => {
-		dispatch({
-			type: 'addList',
-			payload: createList(state),
-		})
-	}
+	const handleSubmit = (state) => dispatch(createList(state))
 
 	return (
 		<section>

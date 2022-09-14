@@ -1,8 +1,8 @@
 import { useId } from 'react'
 
-import { useForm } from '../../hooks/useForm'
-import { validText } from '../../helpers/validText'
-import '../../App.css'
+import { useForm } from '../hooks/useForm'
+import { validText } from '../helpers/validText'
+import '../App.css'
 
 export const Form = ({
 	submit,

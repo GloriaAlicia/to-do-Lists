@@ -1,7 +1,7 @@
 import { useContext, useId } from 'react'
 
-import { AllLists } from '../../context'
-import { completeTask } from '../../helpers/create'
+import { AllLists } from '../../../context'
+import { completeTask } from '../../../helpers/create'
 
 export const Checkbox = ({ id, task, state }) => {
 	const { lists, dispatch } = useContext(AllLists)
@@ -10,10 +10,7 @@ export const Checkbox = ({ id, task, state }) => {
 
 	const handleChange = (e) => {
 		let change = e.target.checked ? 'completed' : 'progress'
-		dispatch({
-			type: 'stateSubtask',
-			payload: completeTask(change, id),
-		})
+		dispatch(completeTask(change, id))
 	}
 
 	return (

@@ -1,20 +1,18 @@
 import { useContext, useEffect } from 'react'
-import { CreateList } from '../../components/Lists/CreateList'
-import { Lists } from '../../components/Lists/Lists'
-import { AllLists } from '../../context'
+import { CreateList } from './Components/CreateList'
+import { AllLists } from '../../context/index.jsx'
+import { Lists } from './Components/Lists'
 
 export const Home = () => {
 	const { lists, dispatch } = useContext(AllLists)
-	console.log(lists)
-
+	
 	useEffect(() => {
-		console.log(lists)
 		localStorage.setItem('Notes', JSON.stringify(lists))
 	}, [lists])
 
 	return (
 		<section>
-			<Lists />
+			<Lists/>
 			<CreateList />
 		</section>
 	)

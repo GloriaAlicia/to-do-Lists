@@ -1,8 +1,8 @@
 import { useState, useContext } from 'react'
-import { AllLists } from '../../context'
+import { AllLists } from '../../../context/index'
 
 import { TaskEdit } from './TaskEdit'
-import { Checkbox } from './Checkbox'
+import { Checkbox } from '../Components/TaskCheck'
 import './styles.css'
 
 export const Task = ({ task, complete, id }) => {
