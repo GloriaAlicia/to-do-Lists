@@ -1,21 +1,24 @@
-import { useContext } from 'react'
-import { AllLists } from '../../../context/index.jsx'
-import { pickList } from '../../../helpers/create.js'
+import { useLists } from '../../../hooks/useLists.jsx'
+import { at, lay } from '../../../components/index.js'
 
 export const Lists = () => {
-	const { lists, dispatch } = useContext(AllLists)
+	const { lists} = useLists()
 
 	return (
-		<section>
-			<h2>Manage your lists</h2>
-
-			<ol>
+		<section>			
+			<at.GridContainer>
+				
 				{lists.map((list) => (
-					<li key={list.id} onClick={() => dispatch(pickList(list.id))}>
-						{list.name}
-					</li>
+					<at.GradientBackground key={list.id}>
+						<lay.ItemList
+							list={list}
+							title={list.name}
+							id={list.id}
+						/>
+					</at.GradientBackground>
 				))}
-			</ol>
+				
+			</at.GridContainer>
 		</section>
 	)
 }

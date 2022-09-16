@@ -1,18 +1,15 @@
 import { Home } from './pages/Home/index'
 import { Board } from './pages/board'
-import { Provider } from './context/index.jsx'
-
-import './App.css'
+import { useFindList } from './hooks/useFindList'
 
 function App() {
+	const actualList = useFindList()
+	
 	return (
-		<Provider>
-			<h1>Stuffs for do</h1>
-			<main className='flex container'>
-				<Home />
-				<Board />
-			</main>
-		</Provider>
+		<main className='flex container'>
+			<h1> Dark Mode </h1>
+			{actualList ? <Board/> : <Home/>}
+		</main>
 	)
 }
 

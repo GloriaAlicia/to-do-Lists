@@ -1,16 +1,15 @@
-import { useContext } from 'react'
-import { Form } from '../../../components/Form'
-import { AllLists } from '../../../context/index.jsx'
+import { lay } from '../../../components'
 import { createList } from '../../../helpers/create.js'
+import { useLists } from '../../../hooks/useLists'
 
 export const CreateList = () => {
-	const { lists, dispatch } = useContext(AllLists)
+	const { dispatch } = useLists()
 
 	const handleSubmit = (state) => dispatch(createList(state))
 
 	return (
 		<section>
-			<Form
+			<lay.Form
 				submit={handleSubmit}
 				placeholder={'create new list'}
 				labelText={'+ '}

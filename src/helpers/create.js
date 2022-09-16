@@ -40,3 +40,8 @@ export const updateTask = (state, id) => ({
 		task: state,
 	}
 })
+
+export const deleteTask = id => ({
+	type: 'deleteSubtask',
+	payload: id,
+})

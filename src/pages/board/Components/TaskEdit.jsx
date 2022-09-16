@@ -1,29 +1,26 @@
-import { useContext } from 'react'
 import PropTypes from 'prop-types'
 
 import { updateTask } from '../../../helpers/create'
-import { AllLists } from '../../../context/index'
-
-import './styles.css'
-import { Form } from '../../../components/Form'
+import { at, lay } from '../../../components'
+import { useLists } from '../../../hooks/useLists'
 
 export const TaskEdit = ({ searchId, setEdit, task }) => {
-	const { lists, dispatch } = useContext(AllLists)
+	const { dispatch } = useLists()
 
 	const handleSubmit = (state) => {
-		dispatch(updateTask(state, searchId))
+		dispatch( updateTask(state, searchId) )
 		setEdit(false)
 	}
 
 	return (
-		<div className='flex'>
-			<Form
+		<at.FlexContainer>
+			<lay.Form
 				submit={handleSubmit}
 				placeholder={'edit your task'}
 				labelText={''}
 				textValue={task}
 				buttonText={'Update'}
 			/>
-		</div>
+		</at.FlexContainer>
 	)
 }

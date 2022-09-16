@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { AllLists } from '../context'
+import { AllLists } from '../context/index.jsx'
 
 export const useFindList = () => {
 	const { lists } = useContext(AllLists)

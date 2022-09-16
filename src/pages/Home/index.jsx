@@ -12,8 +12,9 @@ export const Home = () => {
 
 	return (
 		<section>
-			<Lists/>
+			<h2>Manage your lists</h2>
 			<CreateList />
+			<Lists/>
 		</section>
 	)
 }

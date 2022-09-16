@@ -1,8 +1,7 @@
 import { useId } from 'react'
-
-import { useForm } from '../hooks/useForm'
-import { validText } from '../helpers/validText'
-import '../App.css'
+import { useForm } from '../../hooks/useForm'
+import { validText } from '../../helpers/validText'
+import * as at from '../Atoms'
 
 export const Form = ({
 	submit,
@@ -21,19 +20,16 @@ export const Form = ({
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
-		const valid = validText(task)
-		valid ? submit(task) : console.log('text empty')
+		validText(task) ? submit(task) : console.log('text empty')
 		reset()
 	}
 
 	return (
-		<form onSubmit={handleSubmit} className='flex'>
-			<label htmlFor={constantId}> {labelText} </label>
-
-			<input
-				type='text'
+		<form onSubmit={handleSubmit}>
+			<at.LabelText htmlFor={constantId}> {labelText }</at.LabelText>
+			
+			<at.InputText
 				name='task'
-				className='inputData'
 				placeholder={placeholder}
 				autoComplete='off'
 				value={task}
