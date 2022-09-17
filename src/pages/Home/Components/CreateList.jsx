@@ -12,7 +12,7 @@ export const CreateList = () => {
 			<lay.Form
 				submit={handleSubmit}
 				placeholder={'create new list'}
-				labelText={'+ '}
+				labelText={' add new task'}
 			/>
 		</section>
 	)

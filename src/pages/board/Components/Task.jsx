@@ -1,5 +1,5 @@
 import { useId } from 'react'
-import { deleteTask, completeTask } from '../../../helpers/create'
+import { completeTask, deleteSubtask } from '../../../helpers/create'
 import { at, icon } from '../../../components'
 import { useLists } from '../../../hooks/useLists'
 
@@ -29,7 +29,7 @@ export const Task = ({ id, task, state, setEdit }) => {
 				edit
 			</button>
 				
-			<button onClick={ () => dispatch(deleteTask(id)) }>delete</button>
+			<button onClick={ () => dispatch(deleteSubtask(id)) }>delete</button>
 	</at.FlexContainer>
 	)
 }

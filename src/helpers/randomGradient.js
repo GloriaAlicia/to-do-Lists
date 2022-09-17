@@ -1,11 +1,10 @@
 
-export const randomGradient = (color1, color2, color3) => {
+export const randomGradient = (color1, color2) => {
     const generatedGradient = `
-    radial-gradient(farthest-side at ${randomNumber(0, 100, "%")} ${randomNumber(0, 100, "%")}, ${color1} 0%, transparent 80%),
+    radial-gradient(farthest-side at ${randomNumber(0, 100, "%")} ${randomNumber(0, 100, "%")}, ${color1} 0%, transparent 100%),
 
-    radial-gradient(farthest-side at ${randomNumber(0, 100, "%")} ${randomNumber(0, 100, "%")}, ${color2} 0%, transparent 80%),
-
-    radial-gradient(circle farthest-side at ${randomNumber(0, 100, "%")} ${randomNumber(0, 100, "%")}, ${color3} 0%, transparent)`;
+    radial-gradient(farthest-side at ${randomNumber(0, 100, "%")} ${randomNumber(0, 100, "%")}, ${color2} 0%, transparent 90%)
+  `;
   return generatedGradient
 }
 

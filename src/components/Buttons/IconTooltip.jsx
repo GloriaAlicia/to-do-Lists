@@ -1,47 +1,52 @@
 import styled from 'styled-components'
 import { colors, space } from '../../styles/var';
 
-export const Button = styled.button`
-  // font-size: 1.3rem;
-  background-color: ${colors.dark}
+const Button = styled.button`
+  color: ${colors.white};
+  border: solid 1px ${colors.primary};
+  border-radius: ${space.radius};
   position: relative;
   display: inline-block;
 
 	&:hover{
-    box-shadow: 0px 20px 35px ${colors.dark};
+    box-shadow: 0px 20px 35px ${colors.primaryOpacity};
+    border: solid 1px ${colors.white};
 	}
 `;
 
 const Tooltip = styled.span`
- visibility: hidden;
- width: 4em;
- background-color: ${colors.background};
- text-align: center;
- border-radius: ${space.radius};
- padding: 5px 0;
- position: absolute;
- z-index: 1;
- top: 25%;
- left: 110%;
+  color: ${colors.white};
+  background-color: ${colors.background};
+  font-size: 0.8rem;
+  visibility: hidden;
+  min-width: 2em;
+  text-align: center;
+  border-radius: ${space.radius};
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  top: -50%;
+  right: 10%;
 
 &::after {
   content: "";
   position: absolute;
-  top: 50%;
-  right: 100%;
-  margin-top: -5px;
+  top: 100%;
+  right: 50%;
   border-width: 5px;
   border-style: solid;
-  border-color: transparent ${colors.background} transparent transparent;
+  border-color: ${colors.background} transparent transparent transparent;
 }
 
-${Button}:hover + && {
+${Button}:hover && {
  visibility: visible;
 }
 `
-export const IconTooltip = ({title,}) => {
+export const IconTooltip = ({ title, children, handle }) => {
 	return (
-		<>
-		</>
+    <Button onClick={handle}  aria-label={ `button for ${title}` } >
+      { children }
+      <Tooltip> {title} </Tooltip>
+    </Button>
 	)
 }

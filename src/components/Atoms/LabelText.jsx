@@ -14,7 +14,7 @@ export const LabelText = styled.label`
         `;
       default:
         return `
-          color: ${colors.primary};
+          color: ${colors.white};
         `;
     }
   }}

@@ -1,4 +1,5 @@
 export const colors = {
+  white: '#fff',
   primary: '#7C83FD',
   primaryOpacity: '#7c82fd57',
   dark: '#0e0e18c2',
@@ -12,5 +13,6 @@ export const colors = {
 export const space = {
   radius: '9px',
   pad: '10px',
-  mediumPad: '20px',
+  mediumPad: '15px',
+  bigPad: '20px',
 }

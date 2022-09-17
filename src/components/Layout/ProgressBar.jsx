@@ -23,7 +23,7 @@ const Progress = styled.div`
 	background-color: ${colors.primary};
 `
 const Text = styled.p`
-	margin: 0 0 0 .4rem;
+	margin: 0;
 `
 
 export const ProgressBar = ({ list }) => {
@@ -32,14 +32,14 @@ export const ProgressBar = ({ list }) => {
 	
 	return list.tasks.length >= 1 ? (
 		<>
-			<ContainerWrap>
-				<Progress style={{ width: width + "%" }} />
-			</ContainerWrap>
-			
 			<Container>
 				<Text> Progress </Text>
 				<Text>{`${complete.length} / ${list.tasks.length}`}</Text>
 			</Container>
+			
+			<ContainerWrap>
+				<Progress style={{ width: width + "%" }} />
+			</ContainerWrap>
 		</>
 	) : <p>List Empty</p>
 }

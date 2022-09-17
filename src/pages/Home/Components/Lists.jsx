@@ -13,7 +13,6 @@ export const Lists = () => {
 						<lay.ItemList
 							list={list}
 							title={list.name}
-							id={list.id}
 						/>
 					</at.GradientBackground>
 				))}

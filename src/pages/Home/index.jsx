@@ -12,7 +12,6 @@ export const Home = () => {
 
 	return (
 		<section>
-			<h2>Manage your lists</h2>
 			<CreateList />
 			<Lists/>
 		</section>

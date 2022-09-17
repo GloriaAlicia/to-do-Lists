@@ -1,10 +1,12 @@
 import { FiEdit3 } from 'react-icons/fi'
 import styled from 'styled-components'
+import { colors } from '../../styles/var'
 
 
 export const EditIcon = styled(FiEdit3)`
-	margin-right: 0.5rem;
+  height: 14px;
+	color: ${colors.primary};
   &:hover{
-		color: #0d9488;
+		color: ${colors.white};
 	}
 `

@@ -3,9 +3,9 @@ import { randomGradient } from '../../helpers/randomGradient';
 import { colors, space } from '../../styles/var';
 
 export const GradientBackground = styled.article`
-	padding: ${space.pad};
+	padding: ${space.mediumPad};
 	border-radius: ${space.radius};
-	background-image: ${randomGradient(colors.gPurpleOpacity, colors.gPurple, colors.gRose)};
+	background-image: ${randomGradient(colors.gPurpleOpacity, colors.gPurple)};
 	background-repeat: no-repeat;
 	background-color: ${colors.primaryOpacity};
 

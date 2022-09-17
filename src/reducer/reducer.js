@@ -1,7 +1,10 @@
 export const reducer = (state = [], action) => {
 	switch (action.type) {
 		case 'addList':
-			return [...state, action.payload]
+			return  [...state, action.payload]
+		
+		case 'deleteList':
+			return state.filter((list) => list.id !== action.payload)
 
 		case 'selectedList':
 			return state.map((list) =>

@@ -3,7 +3,7 @@ import { colors, space } from '../../styles/var';
 
 export const Primary = styled.button`
   color: inherit;
-  background-color: ${colors.gPurpleOpacity};
+  background-color: ${colors.primaryOpacity};
   border-radius: ${space.radius};
   display: inline-block;
 

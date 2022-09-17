@@ -1,5 +1,7 @@
 import { v4 as uuidv4 } from 'uuid'
 
+/************************ Lists ********************************** */
+
 export const createList = (state) => ({
 	type: 'addList',
   	payload: {
@@ -14,6 +16,13 @@ export const pickList = (id) => ({
 	type: 'selectedList',
 	payload: id,
 })
+
+export const deleteList = (id) => ({
+	type: 'deleteList',
+	payload: id,
+})
+
+/************************ Subtasks ********************************** */
 
 export const createTask = (state) => ({
 	type: 'addSubtask',
@@ -41,7 +50,7 @@ export const updateTask = (state, id) => ({
 	}
 })
 
-export const deleteTask = id => ({
+export const deleteSubtask = (id) => ({
 	type: 'deleteSubtask',
 	payload: id,
 })
