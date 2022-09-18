@@ -7,6 +7,7 @@ export const InputText = styled.input.attrs({ type: "text" })`
   background: transparent;
   color: ${colors.white};
   padding: ${space.pad};
+  margin: 0 ${space.bigPad};
   transition: all .6s ease-in;
 
 &::placeholder{
@@ -16,4 +17,8 @@ export const InputText = styled.input.attrs({ type: "text" })`
 &:focus{
   outline: 2px solid ${colors.primary};
 }
+
+@media (max-width: 330px) {
+	  width: 85%;
+  }
 `;

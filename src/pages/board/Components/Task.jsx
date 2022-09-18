@@ -13,23 +13,33 @@ export const Task = ({ id, task, state, setEdit }) => {
 	}
 
 	return (
-		<At.FlexContainer>
-			<At.InputCheck
-				id={constantId}
-				defaultChecked={state === 'completed' ?? checked}
-				onChange={ handleChange }
-			/>
+		<>
 			
-			<At.LabelText htmlFor={constantId} check={state === 'completed'}>
-				{ task }
-			</At.LabelText>
+			<At.FlexContainer>
+				<At.InputCheck
+					id={constantId}
+					defaultChecked={state === 'completed' ?? checked}
+					onChange={ handleChange }
+				/>
+			
+				<At.LabelText htmlFor={constantId} check={state === 'completed'}>
+					{ task }
+				</At.LabelText>
+			</At.FlexContainer>
 				
-			<Button.Primary onClick={() => setEdit(true)}>
-				<Icon.EditIcon/>
-				edit
-			</Button.Primary>
+			
+			<At.FlexContainer>
+				<Button.IconTooltip title={'edit'} handle={() => setEdit(true)} >
+					<Icon.EditIcon/>
+				</Button.IconTooltip>
 				
-			<Button.Primary onClick={ () => dispatch(deleteSubtask(id)) }>delete</Button.Primary>
-	</At.FlexContainer>
+				<Button.IconTooltip
+				title={'delete'}
+				handle={() => dispatch(deleteSubtask(id))} >
+          <Icon.Trash />
+				</Button.IconTooltip>
+			</At.FlexContainer>
+			
+	</>
 	)
 }

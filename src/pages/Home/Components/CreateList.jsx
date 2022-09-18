@@ -12,7 +12,6 @@ export const CreateList = () => {
 			<Lay.Form
 				submit={handleSubmit}
 				placeholder={'create new list'}
-				labelText={' add new task'}
 			/>
 		</section>
 	)

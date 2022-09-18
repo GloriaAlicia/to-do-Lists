@@ -3,7 +3,7 @@ import { colors } from '../../styles/var';
 
 export const InputCheck = styled.input.attrs({ type: "checkbox" })`
   height: 1.5rem;
-  width: 1.5rem;
+  min-width: 1.5rem;
   margin: 5px;
   display: inline-block;
   appearance: none;

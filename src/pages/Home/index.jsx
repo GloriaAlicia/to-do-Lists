@@ -1,10 +1,11 @@
-import { useContext, useEffect } from 'react'
+import { useEffect } from 'react'
 import { CreateList } from './Components/CreateList'
-import { AllLists } from '../../context/index.jsx'
 import { Lists } from './Components/Lists'
+import { useLists } from '../../hooks/useLists'
+import { TitleDecorative } from '../../components/Atoms/TitleDecorative'
 
 export const Home = () => {
-	const { lists, dispatch } = useContext(AllLists)
+	const { lists } = useLists()
 	
 	useEffect(() => {
 		localStorage.setItem('Notes', JSON.stringify(lists))
@@ -12,6 +13,7 @@ export const Home = () => {
 
 	return (
 		<section>
+			<TitleDecorative text={'Manage your tasks'} />
 			<CreateList />
 			<Lists/>
 		</section>

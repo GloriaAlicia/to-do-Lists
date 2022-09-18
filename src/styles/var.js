@@ -11,8 +11,8 @@ export const colors = {
 }
 
 export const space = {
-  radius: '9px',
-  pad: '10px',
+  radius: '.5rem',
+  pad: '.6rem',
   mediumPad: '15px',
-  bigPad: '20px',
+  bigPad: '1.1rem',
 }

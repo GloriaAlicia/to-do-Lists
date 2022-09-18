@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
   }
  
 #root {
-  max-width: 1280px;
+  max-width: 2000px;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   // color-scheme: light dark;

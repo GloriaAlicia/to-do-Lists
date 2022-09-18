@@ -11,7 +11,6 @@ export const CreateTask = () => {
 		<Lay.Form
 			submit={handleSubmit}
 			placeholder={'create new task'}
-			labelText={'task'}
 		/>
 	)
 }

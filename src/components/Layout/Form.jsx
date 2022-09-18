@@ -2,6 +2,7 @@ import { useId } from 'react'
 import { useForm } from '../../hooks/useForm'
 import { validText } from '../../helpers/validText'
 import * as At from '../Atoms'
+import * as Button from '../Buttons'
 
 export const Form = ({
 	submit,
@@ -26,19 +27,19 @@ export const Form = ({
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<At.LabelText htmlFor={constantId}> {labelText }</At.LabelText>
 			
 			<At.InputText
 				name='task'
 				placeholder={placeholder}
 				autoComplete='off'
+				maxLength={150}
 				value={task}
 				id={constantId}
 				onChange={handleInputChange}
 			/>
 
 			{buttonText ? (
-				<button onClick={handleSubmit}> {buttonText} </button>
+				<Button.Primary onClick={handleSubmit} > {buttonText} </Button.Primary>
 			) : undefined}
 		</form>
 	)

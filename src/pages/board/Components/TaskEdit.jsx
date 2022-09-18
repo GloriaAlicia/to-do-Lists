@@ -16,7 +16,6 @@ export const TaskEdit = ({ searchId, setEdit, task }) => {
 			<Lay.Form
 				submit={handleSubmit}
 				placeholder={'edit your task'}
-				labelText={''}
 				textValue={task}
 				buttonText={'Update'}
 			/>
