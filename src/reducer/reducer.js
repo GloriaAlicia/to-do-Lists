@@ -13,6 +13,15 @@ export const reducer = (state = [], action) => {
 					: { ...list, selected: false },
 			)
 
+		case 'favouriteList':
+			return state.map((list) => {
+				if (list.id === action.payload.id) {
+					return { ...list, favourite: action.payload.favourite }
+				} else {
+					return list
+				}
+			})
+		
 		case 'addSubtask':
 			return state.map((list) =>
 				list.selected === true

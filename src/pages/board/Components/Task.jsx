@@ -1,6 +1,6 @@
 import { useId } from 'react'
 import { completeTask, deleteSubtask } from '../../../helpers/create'
-import { at, icon } from '../../../components'
+import { At, Icon, Button } from '../../../components'
 import { useLists } from '../../../hooks/useLists'
 
 export const Task = ({ id, task, state, setEdit }) => {
@@ -13,23 +13,23 @@ export const Task = ({ id, task, state, setEdit }) => {
 	}
 
 	return (
-		<at.FlexContainer>
-			<at.InputCheck
+		<At.FlexContainer>
+			<At.InputCheck
 				id={constantId}
 				defaultChecked={state === 'completed' ?? checked}
 				onChange={ handleChange }
 			/>
 			
-			<at.LabelText htmlFor={constantId} check={state === 'completed'}>
+			<At.LabelText htmlFor={constantId} check={state === 'completed'}>
 				{ task }
-			</at.LabelText>
+			</At.LabelText>
 				
-			<button onClick={() => setEdit(true)}>
-				<icon.EditIcon/>
+			<Button.Primary onClick={() => setEdit(true)}>
+				<Icon.EditIcon/>
 				edit
-			</button>
+			</Button.Primary>
 				
-			<button onClick={ () => dispatch(deleteSubtask(id)) }>delete</button>
-	</at.FlexContainer>
+			<Button.Primary onClick={ () => dispatch(deleteSubtask(id)) }>delete</Button.Primary>
+	</At.FlexContainer>
 	)
 }

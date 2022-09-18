@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
-
 import { updateTask } from '../../../helpers/create'
-import { at, lay } from '../../../components'
+import { At, Lay } from '../../../components'
 import { useLists } from '../../../hooks/useLists'
 
 export const TaskEdit = ({ searchId, setEdit, task }) => {
@@ -13,14 +12,14 @@ export const TaskEdit = ({ searchId, setEdit, task }) => {
 	}
 
 	return (
-		<at.FlexContainer>
-			<lay.Form
+		<At.FlexContainer>
+			<Lay.Form
 				submit={handleSubmit}
 				placeholder={'edit your task'}
 				labelText={''}
 				textValue={task}
 				buttonText={'Update'}
 			/>
-		</at.FlexContainer>
+		</At.FlexContainer>
 	)
 }

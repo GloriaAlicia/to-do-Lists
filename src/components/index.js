@@ -1,4 +1,4 @@
-export * as at from './Atoms'
-export * as icon from './Icons'
-export * as button from './Buttons'
-export * as lay from './Layout'
+export * as At from './Atoms'
+export * as Icon from './Icons'
+export * as Button from './Buttons'
+export * as Lay from './Layout'

@@ -1,7 +1,7 @@
 import { useId } from 'react'
 import { useForm } from '../../hooks/useForm'
 import { validText } from '../../helpers/validText'
-import * as at from '../Atoms'
+import * as At from '../Atoms'
 
 export const Form = ({
 	submit,
@@ -26,9 +26,9 @@ export const Form = ({
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<at.LabelText htmlFor={constantId}> {labelText }</at.LabelText>
+			<At.LabelText htmlFor={constantId}> {labelText }</At.LabelText>
 			
-			<at.InputText
+			<At.InputText
 				name='task'
 				placeholder={placeholder}
 				autoComplete='off'

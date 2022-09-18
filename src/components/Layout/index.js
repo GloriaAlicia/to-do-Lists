@@ -1,5 +1,5 @@
 export { Empty } from './Empty'
 export { Form } from './Form'
-export { ItemList } from './ItemList'
 export { ProgressBar } from './ProgressBar'
 export { ContainerButtons } from './ContainerButtons'
+export { Favourite } from './Favourite'

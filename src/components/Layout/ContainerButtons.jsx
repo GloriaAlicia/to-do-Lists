@@ -1,30 +1,32 @@
 import { deleteList, pickList } from "../../helpers/create"
 import { useLists } from "../../hooks/useLists"
-import * as button from '../Buttons'
-import * as icon from '../Icons'
-import * as at from '../Atoms'
+import * as Button from '../Buttons'
+import * as Icon from '../Icons'
+import * as At from '../Atoms'
+import * as Lay from '../Layout'
 
 
-export const ContainerButtons = ({id}) => {
-  const { lists, dispatch } = useLists()
+export const ContainerButtons = ({id, favourite}) => {
+  const { dispatch } = useLists()
   
-  const handleDeleteList = () => {
-    dispatch(deleteList(id))
-    console.log(deleteList(id));
-  }
+  const handleDeleteList = () => dispatch(deleteList(id))
   
   return (
-    <at.FlexContainer space>
-      <button.Primary onClick={() => dispatch(pickList(id))}>
-				Add subtasks
-      </button.Primary>
+    <At.FlexContainer space>
+      <Button.Primary onClick={() => dispatch(pickList(id))}>
+				Subtasks
+      </Button.Primary>
       
-      <at.FlexContainer>
-        <button.IconTooltip title={'delete'} handle={handleDeleteList} >
-        <icon.Trash />
-      </button.IconTooltip>
+      <At.FlexContainer>
+        <Button.IconTooltip title={'delete'} handle={handleDeleteList} >
+          <Icon.Trash />
+        </Button.IconTooltip>
       
-      </at.FlexContainer>
-    </at.FlexContainer>
+        <Button.IconTooltip title={'favourite'}>
+          <Lay.Favourite  id={id} favourite={favourite} />
+        </Button.IconTooltip>
+        
+      </At.FlexContainer>
+    </At.FlexContainer>
 )
 }

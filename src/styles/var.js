@@ -1,7 +1,7 @@
 export const colors = {
   white: '#fff',
   primary: '#7C83FD',
-  primaryOpacity: '#7c82fd57',
+  primaryOpacity: '#7c82fd46',
   dark: '#0e0e18c2',
   background: '#0F0F1A',
   gRose: '#fc51ff59',

@@ -1,9 +1,13 @@
 # To-do List
 
-![version without styles](./images-readme/progressTo-do-React.png 'to-do-lists')
+![version without styles](./images-readme/DarkHome16.png 'to-do-lists')
 
-## _pendientes_
+## pendientes
 
-modo oscuro  
+descripción de lista
+modal
+editar listas
+estilos en subtareas
+vista vacia
 
-<!-- ## **bugs** -->
+<!-- drag & drop -->

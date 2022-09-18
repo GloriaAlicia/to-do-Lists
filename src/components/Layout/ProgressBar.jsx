@@ -6,7 +6,7 @@ import { colors, space } from '../../styles/var'
 const ContainerWrap = styled.div`
   background-color: rgba(20, 20, 20, 0.26);
 	border-radius: ${space.radius};
-	height: 1.5vh;
+	height: 1vh;
 	width: 100%;
 	margin: 0.5rem 0rem;
 `

@@ -1,4 +1,4 @@
-import { lay } from '../../../components'
+import { Lay } from '../../../components'
 import { createList } from '../../../helpers/create.js'
 import { useLists } from '../../../hooks/useLists'
 
@@ -9,7 +9,7 @@ export const CreateList = () => {
 
 	return (
 		<section>
-			<lay.Form
+			<Lay.Form
 				submit={handleSubmit}
 				placeholder={'create new list'}
 				labelText={' add new task'}

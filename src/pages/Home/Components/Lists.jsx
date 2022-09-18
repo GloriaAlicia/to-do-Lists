@@ -1,23 +1,24 @@
 import { useLists } from '../../../hooks/useLists.jsx'
-import { at, lay } from '../../../components/index.js'
+import { At } from '../../../components/index.js'
+import { ItemList } from './ItemList'
 
 export const Lists = () => {
 	const { lists} = useLists()
 
 	return (
 		<section>			
-			<at.GridContainer>
+			<At.GridContainer>
 				
 				{lists.map((list) => (
-					<at.GradientBackground key={list.id}>
-						<lay.ItemList
+					<At.GradientBackground key={list.id} gradient={list.favourite} >
+						<ItemList
 							list={list}
 							title={list.name}
 						/>
-					</at.GradientBackground>
+					</At.GradientBackground>
 				))}
 				
-			</at.GridContainer>
+			</At.GridContainer>
 		</section>
 	)
 }

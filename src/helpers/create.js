@@ -5,10 +5,11 @@ import { v4 as uuidv4 } from 'uuid'
 export const createList = (state) => ({
 	type: 'addList',
   	payload: {
-	   name: state,
-	   id: uuidv4(),
-	   selected: false,
-	   tasks: [],
+	   	name: state,
+	   	id: uuidv4(),
+			selected: false,
+		 	favourite: false,
+	   	tasks: [],
 	}
 })
 
@@ -20,6 +21,14 @@ export const pickList = (id) => ({
 export const deleteList = (id) => ({
 	type: 'deleteList',
 	payload: id,
+})
+
+export const favouriteList = (favourite, id) => ({
+	type: 'favouriteList',
+	payload: {
+		id: id,
+		favourite: favourite,
+	}
 })
 
 /************************ Subtasks ********************************** */

@@ -1,7 +1,8 @@
+
 export const validText = (textValue) => {
-	const regex = /(\s{1,})(\w{0})/g
-	const whitespace = regex.test(textValue)
-	const validText = textValue !== '' && !whitespace && textValue.length >= 2
+	const regex = /(\w{1,})/g
+	const text = regex.test(textValue)
+	const validText = text && textValue.length >= 2
 
 	return validText
 }

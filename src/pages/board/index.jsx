@@ -1,29 +1,32 @@
-import { RenderTasks } from './Components/RenderTasks'
 import { CreateTask } from './Components/CreateTask'
-import { useFindList } from '../../hooks/useFindList'
-import { useTaskState } from '../../hooks/useTaskState'
 import { pickList } from '../../helpers/create'
 import { useLists } from '../../hooks/useLists'
+import { At, Button } from '../../components/index.js'
+import { ContainerTasks } from './Components/ContainerTasks'
+import { Header } from './Components/Header'
+import styled from 'styled-components'
+
+export const Container = styled(At.FlexContainer)`
+  width: 90vw;
+	margin: 0 auto;
+	flex-direction: column;
+`
 
 export const Board = () => {
 	const { dispatch } = useLists()
-	const actualList = useFindList()
-	const { tasksProgress, tasksCompleted } = useTaskState(actualList?.tasks)
-
+	
 	return (
-		<section className='containerList'>
-			<div className='header'>
-				<h3> {actualList?.name} </h3>
-				<p> {tasksProgress?.length ?? 0} remaining tasks </p>
-				<CreateTask />
-			</div>
-
-			<section className='containerTasks'>
-				<RenderTasks tasks={tasksProgress} title={'In progress'} />
-				<RenderTasks tasks={tasksCompleted} title={'Completed'} />
-			</section>
+		<Container>
+			<Header />
 			
-			<button onClick={() => dispatch(pickList(10))}>Home</button>
-		</section>
+			<At.FlexContainer>
+					<Button.Primary onClick={() => dispatch(pickList(10))} >
+						Home
+					</Button.Primary>
+					<CreateTask />
+			</At.FlexContainer>
+			
+			<ContainerTasks />
+		</Container>
 	)
 }

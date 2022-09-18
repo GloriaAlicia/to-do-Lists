@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { colors } from '../../styles/var';
 
 export const InputCheck = styled.input.attrs({ type: "checkbox" })`
   height: 1.5rem;
@@ -9,7 +10,7 @@ export const InputCheck = styled.input.attrs({ type: "checkbox" })`
   position: relative;
   border-radius: 50%;
   padding: 10px;
-  border: solid 1.2px #0d9488;
+  border: solid 1.2px ${colors.primary};
   cursor: pointer;
   overflow: hidden;
 
@@ -22,8 +23,8 @@ export const InputCheck = styled.input.attrs({ type: "checkbox" })`
   display: block;
   height: 0.75rem;
   width: .3rem;
-  border-bottom: .2rem solid #0d9488;
-  border-right: .2rem solid #0d9488;
+  border-bottom: .2rem solid ${colors.primary};
+  border-right: .2rem solid ${colors.primary};
   opacity: 0;
   transform: rotate(45deg) translate(-50%, -50%);
   position: absolute;

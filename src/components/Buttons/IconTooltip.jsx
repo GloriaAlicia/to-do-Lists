@@ -3,6 +3,7 @@ import { colors, space } from '../../styles/var';
 
 const Button = styled.button`
   color: ${colors.white};
+  user-select: none;
   border: solid 1px ${colors.primary};
   border-radius: ${space.radius};
   position: relative;
@@ -21,18 +22,19 @@ const Tooltip = styled.span`
   visibility: hidden;
   min-width: 2em;
   text-align: center;
+  user-select: none;
   border-radius: ${space.radius};
   padding: 5px;
   position: absolute;
   z-index: 1;
-  top: -50%;
-  right: 10%;
+  top: -65%;
+  right: -10%;
 
 &::after {
   content: "";
   position: absolute;
   top: 100%;
-  right: 50%;
+  right: 29%;
   border-width: 5px;
   border-style: solid;
   border-color: ${colors.background} transparent transparent transparent;

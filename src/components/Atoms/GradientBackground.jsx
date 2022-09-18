@@ -5,7 +5,7 @@ import { colors, space } from '../../styles/var';
 export const GradientBackground = styled.article`
 	padding: ${space.mediumPad};
 	border-radius: ${space.radius};
-	background-image: ${randomGradient(colors.gPurpleOpacity, colors.gPurple)};
+	background-image:${({gradient}) => gradient ? randomGradient(colors.gPurpleOpacity, colors.gPurple) : 'transparent'};
 	background-repeat: no-repeat;
 	background-color: ${colors.primaryOpacity};
 
