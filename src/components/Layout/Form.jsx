@@ -7,7 +7,6 @@ import * as Button from '../Buttons'
 export const Form = ({
 	submit,
 	placeholder,
-	labelText,
 	textValue,
 	buttonText,
 }) => {
@@ -26,7 +25,7 @@ export const Form = ({
 	}
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<form onSubmit={handleSubmit} style={{ display: 'flex'}}>
 			
 			<At.InputText
 				name='task'

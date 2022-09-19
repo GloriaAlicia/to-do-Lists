@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { colors, space } from '../../styles/var'
 
 const Decorative = styled.h1`
-  background-image: radial-gradient(farthest-side at 46% 34%,${colors.gPurpleOpacity} 0%,transparent 100%), radial-gradient(farthest-side at 93% 70%, ${colors.gPurple} 0%,transparent 90%);
+  background-image: radial-gradient(farthest-side at 23% 40%,${colors.primary} 0%,transparent 100%), radial-gradient(farthest-side at  20% 90%, ${colors.gPurple} 0%,transparent 90%);
   font-size: 5rem;
   font-style: italic;
   margin: .5rem 0 0 0;

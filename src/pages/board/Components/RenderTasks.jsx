@@ -21,7 +21,7 @@ export const RenderTasks = ({ tasks, title }) => {
 
 			{tasks?.map((task) => (
 				<Container key={task.id} space big={task.task.length >= 18} >
-					<ItemTask
+					<ItemTask 
 						task={task.task}
 						complete={task.complete}
 						id={task.id}

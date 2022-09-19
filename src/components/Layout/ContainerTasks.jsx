@@ -7,7 +7,7 @@ export const Container = styled.section`
 	margin: 0 auto;
 	width: 80%;
 
-	@media (max-width: 330px) {
+	@media (max-width: 390px) {
 	  width: 100%;
   }
 `

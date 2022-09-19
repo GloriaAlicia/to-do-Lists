@@ -2,7 +2,14 @@ import { useId } from 'react'
 import { completeTask, deleteSubtask } from '../../../helpers/create'
 import { At, Icon, Button } from '../../../components'
 import { useLists } from '../../../hooks/useLists'
+import styled from 'styled-components'
 
+export const Container = styled(At.FlexContainer)`
+	@media (max-width: 390px) {
+	  width: ${({big}) => big ? '100%' : 'auto'};
+    justify-content: ${({big}) => big ? 'end' : 'center'};
+  }
+`
 export const Task = ({ id, task, state, setEdit }) => {
 	const { dispatch } = useLists()
 	const constantId = useId()
@@ -28,7 +35,7 @@ export const Task = ({ id, task, state, setEdit }) => {
 			</At.FlexContainer>
 				
 			
-			<At.FlexContainer>
+			<Container big={task.length >= 18} >
 				<Button.IconTooltip title={'edit'} handle={() => setEdit(true)} >
 					<Icon.EditIcon/>
 				</Button.IconTooltip>
@@ -38,7 +45,7 @@ export const Task = ({ id, task, state, setEdit }) => {
 				handle={() => dispatch(deleteSubtask(id))} >
           <Icon.Trash />
 				</Button.IconTooltip>
-			</At.FlexContainer>
+			</Container>
 			
 	</>
 	)
