@@ -1,6 +1,6 @@
 # Tasker App
 
-![version without styles](./images-readme/tasker0.111.pngto-do-lists')
+![version without styles](./images-readme/tasker.png 'Tasker App')
 
 ## Features
 
