@@ -5,7 +5,7 @@ import { useLists } from '../../../hooks/useLists'
 import styled from 'styled-components'
 
 export const Container = styled(At.FlexContainer)`
-	@media (max-width: 390px) {
+	@media (max-width: 360px) {
 	  width: ${({big}) => big ? '100%' : 'auto'};
     justify-content: ${({big}) => big ? 'end' : 'center'};
   }
