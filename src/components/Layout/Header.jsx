@@ -16,7 +16,7 @@ export const Header = () => {
 	
 	return (
 		<Container>
-			<At.Title $wrap >{actualList?.name}</At.Title>
+			<At.Title>{actualList?.name}</At.Title>
 			<Text> {tasksProgress?.length ?? 0} remaining tasks </Text>
 		</Container>
 	)
