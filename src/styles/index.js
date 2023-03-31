@@ -30,6 +30,8 @@ export const GlobalStyle = createGlobalStyle`
 
 body{
   background-color: ${colors.background};
+  background-image: radial-gradient(farthest-side at 0% 0%, #2b2d4c 0%,transparent 90%);
+  min-height: 100vh;
 }
 
 h1 {
@@ -57,17 +59,4 @@ button {
     outline: 2px solid ${colors.primaryOpacity};
   }
 }
-
-
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
-} */
-
 `

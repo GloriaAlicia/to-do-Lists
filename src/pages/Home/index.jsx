@@ -12,10 +12,10 @@ export const Home = () => {
 	}, [lists])
 
 	return (
-		<section>
-			<TitleDecorative text={'Manage your tasks'} />
+		<>
+			<TitleDecorative text={'Manage your tasks efficiently'} />
 			<CreateList />
 			<Lists/>
-		</section>
+		</>
 	)
 }
