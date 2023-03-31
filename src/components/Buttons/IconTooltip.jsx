@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import { colors, space } from '../../styles/var';
 
 const Button = styled.button`
+  width: 40px;
+  height: 40px;
   color: ${colors.white};
   user-select: none;
   border: solid 1px ${colors.primary};
@@ -23,6 +25,7 @@ const Tooltip = styled.span`
   min-width: 2em;
   text-align: center;
   user-select: none;
+  cursor: pointer;
   border-radius: ${space.radius};
   padding: 5px;
   position: absolute;

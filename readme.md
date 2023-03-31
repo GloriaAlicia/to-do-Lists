@@ -4,10 +4,10 @@
 
 ## Features
 
-Add subtasks
-Progress bar
-Favorite lists
-Delete lists
+Add subtasks  
+Progress bar  
+Favorite lists  
+Delete lists  
 Edit and delete subtasks
 
 
