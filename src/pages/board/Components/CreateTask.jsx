@@ -1,16 +1,37 @@
-import { Lay } from '../../../components/'
-import { createTask } from '../../../helpers/create'
-import { useLists } from '../../../hooks/useLists'
+import { Lay } from '../../../components/';
+import { validText, createTask } from '../../../helpers';
+import { useForm } from '../../../hooks/useForm';
+import { useLists } from '../../../hooks/useLists';
 
 export const CreateTask = () => {
-	
-	const { dispatch } = useLists()
-	const handleSubmit = (state) => dispatch(createTask(state))
+  const { dispatch } = useLists();
 
-	return (
-		<Lay.Form
-			submit={handleSubmit}
-			placeholder={'create new task'}
-		/>
-	)
-}
+  const [values, handleInputChange, reset] = useForm({
+    task: '',
+  });
+
+  const valuesList = [
+    {
+      name: 'task',
+      placeholder: 'new subtask',
+      value: values.task,
+    },
+  ];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validText(values.task)) {
+      dispatch(createTask(values.task));
+    } else {
+      console.log('text empty');
+    }
+    reset();
+  };
+  return (
+    <Lay.Form
+      submit={handleSubmit}
+      onChange={handleInputChange}
+      values={valuesList}
+    />
+  );
+};

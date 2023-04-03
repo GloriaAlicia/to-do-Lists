@@ -1,21 +1,21 @@
-import { useEffect } from 'react'
-import { CreateList } from './Components/CreateList'
-import { Lists } from './Components/Lists'
-import { useLists } from '../../hooks/useLists'
-import { TitleDecorative } from '../../components/Atoms/TitleDecorative'
+import { useEffect } from 'react';
+import { CreateList } from './Components/CreateList';
+import { Lists } from './Components/Lists';
+import { useLists } from '../../hooks/useLists';
+import { TitleDecorative } from '../../components/Atoms/TitleDecorative';
 
 export const Home = () => {
-	const { lists } = useLists()
-	
-	useEffect(() => {
-		localStorage.setItem('Notes', JSON.stringify(lists))
-	}, [lists])
+  const { lists } = useLists();
 
-	return (
-		<>
-			<TitleDecorative text={'Manage your tasks efficiently'} />
-			<CreateList />
-			<Lists/>
-		</>
-	)
-}
+  useEffect(() => {
+    localStorage.setItem('Notes', JSON.stringify(lists));
+  }, [lists]);
+
+  return (
+    <>
+      <TitleDecorative text={'Manage your tasks efficiently'} />
+      <CreateList />
+      <Lists />
+    </>
+  );
+};

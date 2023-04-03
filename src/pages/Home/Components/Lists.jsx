@@ -1,6 +1,7 @@
 import { useLists } from '../../../hooks/useLists.jsx';
 import { At, Lay } from '../../../components/index.js';
 import { ItemList } from './ItemList';
+import { Fragment } from 'react';
 
 export const Lists = () => {
   const { lists } = useLists();
@@ -10,9 +11,9 @@ export const Lists = () => {
       {lists.length !== 0 ? (
         <At.GridContainer>
           {lists.map((list) => (
-            <At.GradientBackground key={list.id} gradient={list.favourite}>
-              <ItemList list={list} title={list.name} />
-            </At.GradientBackground>
+            <Fragment key={list.id}>
+              <ItemList list={list} />
+            </Fragment>
           ))}
         </At.GridContainer>
       ) : (

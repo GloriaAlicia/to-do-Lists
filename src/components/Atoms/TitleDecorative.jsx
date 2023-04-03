@@ -9,7 +9,7 @@ const Decorative = styled.h1`
     ),
     radial-gradient(
       farthest-side at 100% 30%,
-      ${colors.gPurple} 0%,
+      ${colors.accent} 0%,
       transparent 90%
     );
   font-size: 5rem;
@@ -21,7 +21,8 @@ const Decorative = styled.h1`
 `;
 
 const Text = styled.h4`
-  font-size: 2rem;
+  font-size: 1.8rem;
+  color: ${colors.primary};
   margin: 0;
   @media (max-width: 500px) {
     font-size: 1rem;

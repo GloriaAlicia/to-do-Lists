@@ -1,45 +1,31 @@
-import { useId } from 'react'
-import { useForm } from '../../hooks/useForm'
-import { validText } from '../../helpers/validText'
-import * as At from '../Atoms'
-import * as Button from '../Buttons'
+import * as At from '../Atoms';
+import * as Button from '../Buttons';
 
-export const Form = ({
-	submit,
-	placeholder,
-	textValue,
-	buttonText,
-}) => {
-	const initialState = textValue || ''
+export const Form = ({ submit, onChange, values, buttonText }) => {
+  return (
+    <form onSubmit={submit} style={{ display: 'flex' }}>
+      {values.map((input) => {
+        return (
+          <div key={input.name}>
+            <label htmlFor={input.name}>{input.label}</label>
+            <At.InputText
+              id={input.name}
+              name={input.name}
+              autoComplete="off"
+              maxLength={100}
+              value={input.value}
+              placeholder={input.placeholder}
+              onChange={(e) => onChange(e)}
+            />
+          </div>
+        );
+      })}
 
-	const [{ task }, handleInputChange, reset] = useForm({
-		task: initialState,
-	})
-
-	const constantId = useId()
-
-	const handleSubmit = (e) => {
-		e.preventDefault()
-		validText(task) ? submit(task) : console.log('text empty')
-		reset()
-	}
-
-	return (
-		<form onSubmit={handleSubmit} style={{ display: 'flex'}}>
-			
-			<At.InputText
-				name='task'
-				placeholder={placeholder}
-				autoComplete='off'
-				maxLength={150}
-				value={task}
-				id={constantId}
-				onChange={handleInputChange}
-			/>
-
-			{buttonText ? (
-				<Button.Primary onClick={handleSubmit} > {buttonText} </Button.Primary>
-			) : undefined}
-		</form>
-	)
-}
+      {buttonText ? (
+        <Button.Primary type="submit" onClick={submit}>
+          {buttonText}
+        </Button.Primary>
+      ) : undefined}
+    </form>
+  );
+};

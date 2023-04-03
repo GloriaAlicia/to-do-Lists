@@ -15,5 +15,5 @@ export const space = {
   radius: '.5rem',
   pad: '.6rem',
   mediumPad: '15px',
-  bigPad: '1.1rem',
+  bigPad: '1.2rem',
 };

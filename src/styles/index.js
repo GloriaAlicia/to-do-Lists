@@ -1,7 +1,7 @@
-import { createGlobalStyle } from 'styled-components'
-import { normalize } from 'styled-normalize'
-import { colors, space } from './var'
- 
+import { createGlobalStyle } from 'styled-components';
+import { normalize } from 'styled-normalize';
+import { colors, space } from './var';
+
 export const GlobalStyle = createGlobalStyle`
   ${normalize}
   html {
@@ -59,4 +59,4 @@ button {
     outline: 2px solid ${colors.primaryOpacity};
   }
 }
-`
+`;
