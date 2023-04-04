@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { increaseProgress } from '../../helpers/increaseProgress';
-import { tasksStatus } from '../../helpers/tasksStatus';
+import { useStatus } from '../../hooks';
 import { colors, space } from '../../styles/var';
 
 const ContainerWrap = styled.div`
@@ -30,7 +30,7 @@ const Text = styled.p`
 `;
 
 export const ProgressBar = ({ list }) => {
-  const complete = tasksStatus(list.tasks, 'completed');
+  const { status: complete } = useStatus(list?.tasks, 'complete', 'completed');
   const width = increaseProgress(list.tasks.length, complete.length);
 
   return list.tasks.length >= 1 ? (

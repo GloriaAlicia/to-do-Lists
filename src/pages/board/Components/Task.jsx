@@ -3,7 +3,6 @@ import { completeTask, deleteSubtask } from '../../../helpers/create';
 import { At, Icon, Button } from '../../../components';
 import { useLists } from '../../../hooks/useLists';
 import styled from 'styled-components';
-import { colors } from '../../../styles/var';
 
 export const ContainerButtons = styled(At.FlexContainer)`
   @media (max-width: 360px) {

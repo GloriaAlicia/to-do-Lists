@@ -1,6 +1,6 @@
 import { useFindList } from '../../hooks/useFindList';
-import { useTaskState } from '../../hooks/useTaskState';
-import { RenderTasks } from '../../pages/board/Components/RenderTasks';
+import { useStatus } from '../../hooks/useStatus';
+import { RenderTasks } from './RenderTasks';
 import styled from 'styled-components';
 import { Empty } from './Empty';
 
@@ -14,7 +14,17 @@ export const Container = styled.section`
 `;
 export const ContainerTasks = () => {
   const actualList = useFindList();
-  const { tasksProgress, tasksCompleted } = useTaskState(actualList?.tasks);
+  const { status: tasksProgress } = useStatus(
+    actualList?.tasks,
+    'complete',
+    'progress'
+  );
+
+  const { status: tasksCompleted } = useStatus(
+    actualList?.tasks,
+    'complete',
+    'completed'
+  );
 
   return (
     <>

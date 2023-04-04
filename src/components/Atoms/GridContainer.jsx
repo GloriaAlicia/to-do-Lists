@@ -10,7 +10,7 @@ export const GridContainer = styled.section`
 
   @media (min-width: 300px) {
     padding: ${space.pad};
-    margin: 10px;
+    margin: 0px 10px;
   }
 
   @media (min-width: 700px) {

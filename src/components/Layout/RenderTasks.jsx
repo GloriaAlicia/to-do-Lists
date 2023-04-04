@@ -1,7 +1,7 @@
-import { ItemTask } from './ItemTask';
+import { ItemTask } from '../../pages/board/Components/ItemTask';
 import styled from 'styled-components';
-import { space, colors } from '../../../styles/var';
-import { At } from '../../../components';
+import { space, colors } from '../../styles/var';
+import { At } from '..';
 
 const Container = styled(At.FlexContainer)`
   padding: ${space.pad};

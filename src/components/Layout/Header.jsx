@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useFindList } from '../../hooks/useFindList';
-import { useTaskState } from '../../hooks/useTaskState';
+import { useStatus } from '../../hooks/useStatus';
 import { At } from '../../components/index';
 
 const Container = styled(At.FlexContainer)`
@@ -18,12 +18,12 @@ const Text = styled.p`
 `;
 export const Header = () => {
   const actualList = useFindList();
-  const { tasksProgress } = useTaskState(actualList?.tasks);
+  const { status } = useStatus(actualList?.tasks, 'complete', 'progress');
 
   return (
     <Container>
       <At.Title>{actualList?.name}</At.Title>
-      <Text> {tasksProgress?.length ?? 0} remaining tasks </Text>
+      <Text> {status?.length ?? 0} remaining tasks </Text>
     </Container>
   );
 };

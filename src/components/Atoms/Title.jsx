@@ -8,8 +8,4 @@ export const Title = styled.h2`
   word-break: break-all;
   text-transform: capitalize;
   margin: 0px;
-
-  @media (max-width: 390px) {
-    font-size: 0.8rem;
-  }
 `;

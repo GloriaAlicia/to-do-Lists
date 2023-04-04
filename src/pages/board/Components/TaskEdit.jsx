@@ -8,7 +8,7 @@ export const TaskEdit = ({ searchId, setEdit, task }) => {
   const { dispatch } = useLists();
 
   const [values, handleInputChange, reset] = useForm({
-    task: '',
+    task: task,
   });
 
   const valuesList = [

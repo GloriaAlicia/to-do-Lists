@@ -22,7 +22,7 @@ export const CreateList = () => {
   const valuesList = [
     {
       name: 'list',
-      label: 'Name',
+      label: 'Name*',
       placeholder: 'Write a name here',
       value: values.list,
     },
