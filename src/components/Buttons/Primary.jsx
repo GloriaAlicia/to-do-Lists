@@ -7,6 +7,7 @@ export const Primary = styled.button`
   background-color: ${colors.primaryOpacity};
   border-radius: ${space.radius};
   cursor: pointer;
+  padding: ${space.mediumPad};
 
   &:hover {
     box-shadow: 0px 20px 35px ${colors.primaryOpacity};

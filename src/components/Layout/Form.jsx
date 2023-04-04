@@ -1,12 +1,36 @@
+import { Fragment } from 'react';
+import styled from 'styled-components';
+import { colors, space } from '../../styles/var';
 import * as At from '../Atoms';
 import * as Button from '../Buttons';
 
+const Container = styled.div`
+  display: flex;
+  width: 100%;
+  gap: ${space.pad};
+  flex-direction: column;
+`;
+
+const SendButton = styled(Button.Primary)`
+  padding: ${space.mediumPad};
+  background-color: ${colors.accent};
+  width: fit-content;
+  display: flex;
+  align-self: end;
+`;
+
+const FormContainer = styled.form`
+  display: flex;
+  gap: ${space.bigPad};
+  flex-direction: column;
+`;
+
 export const Form = ({ submit, onChange, values, buttonText }) => {
   return (
-    <form onSubmit={submit} style={{ display: 'flex' }}>
+    <FormContainer onSubmit={submit}>
       {values.map((input) => {
-        return (
-          <div key={input.name}>
+        return input.label ? (
+          <Container key={input.name}>
             <label htmlFor={input.name}>{input.label}</label>
             <At.InputText
               id={input.name}
@@ -17,15 +41,27 @@ export const Form = ({ submit, onChange, values, buttonText }) => {
               placeholder={input.placeholder}
               onChange={(e) => onChange(e)}
             />
-          </div>
+          </Container>
+        ) : (
+          <Fragment key={input.name}>
+            <At.InputText
+              id={input.name}
+              name={input.name}
+              autoComplete="off"
+              maxLength={100}
+              value={input.value}
+              placeholder={input.placeholder}
+              onChange={(e) => onChange(e)}
+            />
+          </Fragment>
         );
       })}
 
       {buttonText ? (
-        <Button.Primary type="submit" onClick={submit}>
+        <SendButton type="submit" onClick={submit}>
           {buttonText}
-        </Button.Primary>
+        </SendButton>
       ) : undefined}
-    </form>
+    </FormContainer>
   );
 };

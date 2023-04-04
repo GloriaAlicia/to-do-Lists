@@ -11,6 +11,7 @@ export const GradientBackground = styled.article`
       : 'transparent'};
   background-repeat: no-repeat;
   background-color: ${colors.primaryOpacity};
+  overflow: hidden;
 
   &:hover {
     box-shadow: 0px 20px 35px ${colors.dark};

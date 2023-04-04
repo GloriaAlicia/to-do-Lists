@@ -48,8 +48,7 @@ p, label {
 }
 
 button {
-  border: 1px solid transparent;
-  padding: ${space.pad};
+  border: 0px solid transparent;
   font-size: 1rem;
   background-color: transparent;
   cursor: pointer;

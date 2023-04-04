@@ -5,7 +5,7 @@ export const InputText = styled.input.attrs({ type: 'text' })`
   border: solid 1px ${colors.primary};
   border-radius: ${space.radius};
   background: transparent;
-  color: ${colors.white};
+  color: ${colors.primary};
   padding: ${space.pad};
   margin: 0px;
   transition: all 0.6s ease-in;
@@ -16,9 +16,5 @@ export const InputText = styled.input.attrs({ type: 'text' })`
 
   &:focus {
     outline: 2px solid ${colors.primary};
-  }
-
-  @media (max-width: 330px) {
-    width: 85%;
   }
 `;

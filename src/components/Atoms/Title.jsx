@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Title = styled.h2`
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   white-space: ${({ $wrap }) => ($wrap ? 'nowrap' : 'normal')};
   overflow: hidden;
   text-overflow: ellipsis;
@@ -10,6 +10,6 @@ export const Title = styled.h2`
   margin: 0px;
 
   @media (max-width: 390px) {
-    font-size: 1.8rem;
+    font-size: 0.8rem;
   }
 `;

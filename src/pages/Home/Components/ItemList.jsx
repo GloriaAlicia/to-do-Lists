@@ -10,7 +10,13 @@ const Description = styled.p`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  @media (max-width: 958px) {
+    width: auto;
+    overflow: hidden;
+  }
 `;
+
 export const ItemList = ({ list }) => {
   const { name, favourite, description, id } = list;
   return (

@@ -5,9 +5,9 @@ import { At } from '../../../components';
 
 const Container = styled(At.FlexContainer)`
   padding: ${space.pad};
-  border: solid 1px ${colors.primary};
   border-radius: ${space.radius};
   margin: ${space.pad} 0;
+  background-color: ${colors.primaryOpacity};
 
   @media (max-width: 330px) {
     flex-direction: ${({ big }) => (big ? 'column' : 'row')};
